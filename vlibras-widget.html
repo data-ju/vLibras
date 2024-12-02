@@ -2,7 +2,15 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VLibras Widget</title>
+  <style>
+    /* Estilo para posicionar o botão no canto superior direito */
+    [vw-access-button] {
+      position: fixed;
+      top: 20px; /* Distância do topo */
+      right: 20px; /* Distância da direita */
+      z-index: 1000; /* Certifica-se de que está acima de outros elementos */
+    }
+  </style>
 </head>
 <body>
   <!-- VLibras Widget -->
@@ -13,7 +21,7 @@
     </div>
   </div>
   <script>
-    // Load VLibras Plugin
+    // Carregar o VLibras Plugin
     (function() {
       const script = document.createElement('script');
       script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
@@ -21,6 +29,10 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
       };
       document.body.appendChild(script);
+    })();
+  </script>
+</body>
+</html>
     })();
   </script>
 </body>
