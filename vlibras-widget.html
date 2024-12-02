@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
       --primary-color: #4A90E2;
@@ -9,7 +9,7 @@
       --bg-color: #ffffff;
       --text-color: #2C3E50;
       --border-radius: 8px;
-      --shadow: 0 2px 4px rgba(0,0,0,0.1);
+      --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     body {
@@ -21,22 +21,23 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 600px; /* Reduzido para centralizar e deixar mais compacto */
+      margin: 50px auto; /* Margem para espaçamento superior */
       background: var(--bg-color);
-      padding: 2rem;
+      padding: 1.5rem;
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
     }
 
     textarea {
       width: 100%;
-      padding: 1rem;
+      padding: 0.5rem;
       border: 2px solid #e1e8ed;
       border-radius: var(--border-radius);
-      font-size: 1rem;
+      font-size: 0.9rem;
       resize: vertical;
-      min-height: 200px;
+      min-height: 120px; /* Caixa de texto menor */
+      max-height: 200px;
     }
 
     textarea:focus {
@@ -47,7 +48,7 @@
     .submit-btn {
       background-color: var(--primary-color);
       color: white;
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.5rem;
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
@@ -63,62 +64,76 @@
 
     .translated-text {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: var(--text-color);
       margin-top: 1rem;
       padding: 1rem;
       background-color: #e9f7ff;
       border-radius: var(--border-radius);
     }
+
+    /* Posiciona o botão do VLibras no canto superior direito */
+    [vw-access-button] {
+      position: fixed;
+      top: 20px; /* Distância do topo */
+      right: 20px; /* Distância da direita */
+      z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+    }
   </style>
 </head>
 <body>
-  <div class='container'>
+  <div class="container">
     <h2>🤟 Tradutor Português - Libras</h2>
     <p>Escreva seu texto em português para gerar a tradução em Língua Brasileira de Sinais.</p>
     
     <!-- Formulário -->
-    <form onsubmit='return false;'>
+    <form onsubmit="return false;">
       <textarea 
-        id='textoportugues' 
-        name='textoportugues' 
-        placeholder='Digite aqui seu texto em português...'
+        id="textoportugues" 
+        name="textoportugues" 
+        placeholder="Digite aqui seu texto em português..."
       ></textarea>
       <button 
-        class='submit-btn' 
-        onclick='exibirTexto()'
+        class="submit-btn" 
+        onclick="exibirTexto()"
       >
         Traduzir para Libras
       </button>
     </form>
 
     <!-- Div onde o texto traduzido será exibido -->
-    <div id='translatedText' class='translated-text' style='display: none;'></div>
+    <div id="translatedText" class="translated-text" style="display: none;"></div>
   </div>
 
   <!-- VLibras -->
-  <div vw class='enabled'>
-    <div vw-access-button class='active'></div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
-      <div class='vw-plugin-top-wrapper'></div>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
-  <script src='https://vlibras.gov.br/app/vlibras-plugin.js'></script>
   <script>
     // Inicializa o VLibras
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
+    (function () {
+      const script = document.createElement("script");
+      script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+      script.onload = function () {
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      };
+      document.body.appendChild(script);
+    })();
 
     // Função para exibir o texto traduzido
     function exibirTexto() {
-      const texto = document.getElementById('textoportugues').value;
-      const translatedTextDiv = document.getElementById('translatedText');
+      const texto = document.getElementById("textoportugues").value;
+      const translatedTextDiv = document.getElementById("translatedText");
       
       // Exibe o texto traduzido em negrito
-      if (texto.trim() !== '') {
-        translatedTextDiv.style.display = 'block';
+      if (texto.trim() !== "") {
+        translatedTextDiv.style.display = "block";
         translatedTextDiv.innerText = texto;
       } else {
-        translatedTextDiv.style.display = 'none';
+        translatedTextDiv.style.display = "none";
       }
     }
   </script>
