@@ -9,22 +9,22 @@
       --bg-color: #ffffff;
       --text-color: #2C3E50;
       --border-radius: 8px;
-      --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      --shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     body {
       background: #f5f7fa;
       color: var(--text-color);
       font-family: 'Segoe UI', system-ui, sans-serif;
-      padding: 20px;
+      padding: 10px; /* Margem geral reduzida */
       line-height: 1.6;
     }
 
     .container {
-      max-width: 600px; /* Reduzido para centralizar e deixar mais compacto */
-      margin: 50px auto; /* Margem para espaçamento superior */
+      max-width: 550px; /* Ajustado para caber na largura disponível */
+      margin: 10px auto; /* Margem superior reduzida */
       background: var(--bg-color);
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
     }
@@ -36,8 +36,8 @@
       border-radius: var(--border-radius);
       font-size: 0.9rem;
       resize: vertical;
-      min-height: 120px; /* Caixa de texto menor */
-      max-height: 200px;
+      min-height: 100px; /* Caixa de texto menor */
+      max-height: 150px;
     }
 
     textarea:focus {
@@ -48,14 +48,14 @@
     .submit-btn {
       background-color: var(--primary-color);
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 0.6rem 1rem; /* Botão reduzido */
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 0.9rem; /* Texto do botão menor */
       font-weight: 600;
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
     }
 
     .submit-btn:hover {
@@ -64,10 +64,10 @@
 
     .translated-text {
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.9rem; /* Texto traduzido menor */
       color: var(--text-color);
-      margin-top: 1rem;
-      padding: 1rem;
+      margin-top: 0.8rem;
+      padding: 0.8rem;
       background-color: #e9f7ff;
       border-radius: var(--border-radius);
     }
@@ -75,16 +75,18 @@
     /* Posiciona o botão do VLibras no canto superior direito */
     [vw-access-button] {
       position: fixed;
-      top: 20px; /* Distância do topo */
-      right: 20px; /* Distância da direita */
-      z-index: 1000; /* Garante que o botão esteja acima de outros elementos */
+      top: 10px; /* Menor distância do topo */
+      right: 10px; /* Distância da direita ajustada */
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>🤟 Tradutor Português - Libras</h2>
-    <p>Escreva seu texto em português para gerar a tradução em Língua Brasileira de Sinais.</p>
+    <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">🤟 Tradutor Português - Libras</h2>
+    <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+      Escreva seu texto em português para gerar a tradução em Língua Brasileira de Sinais.
+    </p>
     
     <!-- Formulário -->
     <form onsubmit="return false;">
