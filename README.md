@@ -88,6 +88,41 @@ Veja a seguir um exemplo de como o VLibras pode ser integrado em um site de form
 </html>
 ```
 
+## Integração com o Power BI
+Para integrar esse recurso com o Power BI, você pode fazer seua própria versão do código ou utilizar a versão disponibilizada.
+
+Realizei algumas tentativas de utilizar o widget diretamente no Power BI, porém, por restrições de acesso do próprio visual, não é possível. Portanto, minha solução foi a de utilizar um site externo já hospedado para configuração do visual.
+
+Você deve utilizar o visual HTML Content e criar uma medida como o exemplo abaixo:
+
+```
+Libras_Player = "<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style>
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Embed VLibras Widget -->
+  <iframe 
+    src='https://data-ju.github.io/vLibras/vlibras-widget.html' 
+    title='VLibras Widget'
+  ></iframe>
+</body>
+</html>
+"
+```
+
+Caso queira utilizar seu próprio site, altere a URL "https://data-ju.github.io/vLibras/vlibras-widget.html" para sua própria versão do Github Pages ou site hospedado que contenha o Widget.
+
+**Lembre-se de trocar todas suas aspas duplas (") por aspas simples (') ou duas aspas duplas (""), para evitar problemas de interpretação no DAX do Power BI.
+
 ## Contribuindo
 Contribuições são sempre bem-vindas! Caso tenha sugestões ou encontre problemas, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
