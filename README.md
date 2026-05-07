@@ -1,6 +1,10 @@
 # VLibras Widget Integration
 
-Este repositório fornece um widget de acessibilidade baseado no VLibras para tradução de texto em português para Libras (Língua Brasileira de Sinais), permitindo maior inclusão e acessibilidade digital.
+O vLibras é uma ferramenta criada por uma iniciativa do Governo Federal, em parceria com o Ministério da Gestão e Inovação em Serviços Públicos (MGISP), por meio da Secretaria de Governo Digital (SGD), Ministério dos Direitos Humanos e da Cidadania (MDHC), por meio da Secretaria Nacional dos Direitos da Pessoa com Deficiência (SNDPD), e a Universidade Federal da Paraíba (UFPB), através do Laboratório de Aplicações de Vídeo Digital (LAVID).
+
+Este repositório fornece um widget de acessibilidade baseado no VLibras para tradução de texto em português para Libras (Língua Brasileira de Sinais). A criação desse repositório teve como último objetivo a utilização do widget (disponibilizado de forma gratuita pelas plataformas oficiais) para a produção de um projeto de Power BI, que está disponível em meu portfólio, confira já: https://data-ju.myportfolio.com/dasboard-libras-power-bi
+
+Vale ressaltar que a criação e todos os direitos autorais da ferramenta pertencem ao Governo Federal e criadores da ferramenta original, veja mais aqui: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras e https://github.com/spbgovbr-vlibras.
 
 ## Demonstração
 Confira o widget em ação: [VLibras Widget](https://data-ju.github.io/vLibras/vlibras-widget.html)
@@ -128,10 +132,11 @@ Contribuições são sempre bem-vindas! Caso tenha sugestões ou encontre proble
 
 ## Licença
 Este projeto utiliza o VLibras, respeitando os termos de uso. Verifique as diretrizes antes de implementar em ambientes comerciais.
+Veja todos os códigos oficiais disponíveis aqui: https://github.com/spbgovbr-vlibras
 
 ## Contato
-Se precisar de suporte ou tiver sugestões, entre em contato:
+Se precisar de suporte para integrar seu código ao Power BI ou tiver sugestões, entre em contato:
 
-- Autor: Julia Azevedo
+Linkedin: https://www.linkedin.com/in/dataju/
 
-- Linkedin: https://www.linkedin.com/in/javlira/
+Caso tenha dúvidas sobre a ferramenta em si, você pode visitar diretamente o GitHub da ferramenta oficial: https://github.com/spbgovbr-vlibras
